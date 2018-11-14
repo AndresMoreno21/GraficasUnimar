@@ -1,0 +1,56 @@
+{% extends "baseAdmin.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-icon" data-background-color="rose">
+            <i class="material-icons">assignment</i>
+        </div>
+        <h4 class="card-title">Lista de estudiantes</h4>
+        <div class="card-content">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Identificacion</th>
+                            <th>Ingles</th>
+                            <th>Lectura Critica</th>
+                            <th>Razonamiento <br>Cuantitativo</th>
+                            <th>Competencias <br>Ciudadanas</th>
+                            <th>Comunicacion <br>Escrita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in estudiantes_list.all %}
+                        <tr>
+                            <td class="text-center">{{p.pk}}</td>
+                            <td>{{p.identificacion}}</td>
+                            <td>{{p.ingles}}</td>
+                            <td>{{p.lecturacritica}}</td>
+                            <td>{{p.razonamiento}}</td>
+                            <td>{{p.competencias}}</td>
+                            <td>{{p.escrito}}</td>
+                            <td class="td-actions text-right">
+                                <a type="button" rel="tooltip" class="btn btn-info" href="{% url 'graficas'%}">
+                                    <i class="material-icons">timeline</i>
+                                </a>
+                                <a type="button" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                    <i class="material-icons">edit</i>
+                                </a>
+                                <a type="button" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                    <i class="material-icons">close</i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

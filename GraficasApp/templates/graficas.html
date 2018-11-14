@@ -1,0 +1,18 @@
+{% extends "baseAdmin.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-md-4">
+    <div class="card card-chart">
+        <div class="card-header" data-background-color="orange">
+            <div id="straightLinesChart" class="ct-chart"></div>
+        </div>
+        <div class="card-content">
+            <h4 class="card-title">Seguimiento de resultados del estudiante</h4>
+            <p class="category">En la grafica se visualizan las pruebas Saber 11 , Simulacros internos y Saber Pro</p>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
