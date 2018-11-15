@@ -3,48 +3,220 @@
 
 {% block content %}
 <form method="post" >{% csrf_token %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header card-header-icon" data-background-color="rose">
-                    <i class="material-icons">person</i>
-                </div>
-                <div class="card-content">
-                    <h4 class="card-title">Crear un estudiante</h4>
-                   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">person</i>
+                    </div>
+                    <div class="card-content">
+                        <div class="nav-center">
+                            <ul class="nav nav-pills nav-pills-info nav-pills-icons" role="tablist">
+                                
+                                <li class="active">
+                                    <a href="#saber11" role="tab" data-toggle="tab">
+                                        <i class="material-icons">school</i> Saber 11
+                                    </a>
+                                </li>
+                                <li >
+                                    <a href="#simulacro3" role="tab" data-toggle="tab">
+                                        <i class="material-icons">assignment</i> Simulacro 3°
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#simulacro5" role="tab" data-toggle="tab">
+                                        <i class="material-icons">assignment</i> Simulacro 5°
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#simulacro7" role="tab" data-toggle="tab">
+                                        <i class="material-icons">assignment</i> Simulacro 7°
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#saberpro" role="tab" data-toggle="tab">
+                                        <i class="material-icons">business</i> Saber Pro
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
                         <div class="form-group label-floating">
-                            <label class="control-label">Identificacion</label>
+                            <h4 class="card-title">Identificacion del Estudiante</h4>
                             {{form.identificacion}}
                         </div>
-                        <div class="form-group label-floating">
-                            <label class="control-label">Ingles</label>
-                            {{form.ingles}}
+                        
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="saber11">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Saber 11</h4>
+                                        <p class="category">
+                                            Formulario de registro para la prueba saber °11
+                                        </p>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Ingles</label>
+                                            {{form.ingles}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Lectura Critica</label>
+                                            {{form.lecturacritica}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Razonamiento Cuantitativo</label>
+                                            {{form.razonamiento}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Competencias Ciudadanas</label>
+                                            {{form.competencias}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Comunicacion Escrita</label>
+                                            {{form.escrito}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="simulacro3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simulacro 3°</h4>
+                                        <p class="category">
+                                            Formulario simulacro de tercer semestre
+                                        </p>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Ingles</label>
+                                            {{form.inglest}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Lectura Critica</label>
+                                            {{form.lecturacriticat}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Razonamiento Cuantitativo</label>
+                                            {{form.razonamientot}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Competencias Ciudadanas</label>
+                                            {{form.competenciast}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Comunicacion Escrita</label>
+                                            {{form.escritot}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="simulacro5">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simulacro 5°</h4>
+                                        <p class="category">
+                                            Formulario para el simulacro de quinto semestre
+                                        </p>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Ingles</label>
+                                            {{form.inglesq}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Lectura Critica</label>
+                                            {{form.lecturacriticaq}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Razonamiento Cuantitativo</label>
+                                            {{form.razonamientoq}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Competencias Ciudadanas</label>
+                                            {{form.competenciasq}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Comunicacion Escrita</label>
+                                            {{form.escritoq}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="tab-pane" id="simulacro7">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Simulacro 7°</h4>
+                                        <p class="category">
+                                            Formulario para el simulacro de septimo semestre
+                                        </p>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Ingles</label>
+                                            {{form.inglese}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Lectura Critica</label>
+                                            {{form.lecturacriticae}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Razonamiento Cuantitativo</label>
+                                            {{form.razonamientoe}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Competencias Ciudadanas</label>
+                                            {{form.competenciase}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Comunicacion Escrita</label>
+                                            {{form.escritoe}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="saberpro">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Saber Pro</h4>
+                                        <p class="category">
+                                            Formulario de registro para la prueba saber pro
+                                        </p>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Ingles</label>
+                                            {{form.inglesp}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Lectura Critica</label>
+                                            {{form.lecturacriticap}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Razonamiento Cuantitativo</label>
+                                            {{form.razonamientop}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Competencias Ciudadanas</label>
+                                            {{form.competenciasp}}
+                                        </div>
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Comunicacion Escrita</label>
+                                            {{form.escritop}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                             <div class="form-group label-floating">
-                            <label class="control-label">Lectura Critica</label>
-                            {{form.lecturacritica}}
-                        </div>
-                             <div class="form-group label-floating">
-                            <label class="control-label">Razonamiento Cuantitativo</label>
-                            {{form.razonamiento}}
-                        </div>
-                             <div class="form-group label-floating">
-                            <label class="control-label">Competencias Ciudadanas</label>
-                            {{form.competencias}}
-                        </div>
-                             <div class="form-group label-floating">
-                            <label class="control-label">Comunicacion Escrita</label>
-                            {{form.escrito}}
-                        </div>
-                      
+                        
                         <button type="submit" class="btn btn-fill btn-rose">Enviar</button>
                         <a href="{% url 'base' %}" class="btn btn-danger">Cancelar</a>
-                    
+                        
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </form>
 {% endblock content%}

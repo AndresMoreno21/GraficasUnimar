@@ -11,7 +11,7 @@
         <h4 class="card-title">Lista de estudiantes</h4>
         <div class="card-content">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="datos">
                     <thead>
                         <tr>
                             <th class="text-center">#</th>
@@ -28,13 +28,12 @@
                         <tr>
                             <td class="text-center">{{p.pk}}</td>
                             <td>{{p.identificacion}}</td>
-                            <td>{{p.ingles}}</td>
-                            <td>{{p.lecturacritica}}</td>
-                            <td>{{p.razonamiento}}</td>
-                            <td>{{p.competencias}}</td>
-                            <td>{{p.escrito}}</td>
+                            <td id="ingles">{{p.ingles}}</td>
+                            <td id="lecto">{{p.lecturacritica}}</td>
+                            <td id="razo">{{p.razonamiento}}</td>
+                            <td id="comp">{{p.competencias}}</td>
                             <td class="td-actions text-right">
-                                <a type="button" rel="tooltip" class="btn btn-info" href="{% url 'graficas'%}">
+                                <a type="button" rel="tooltip" class="btn btn-info" href="{% url 'graficas' %}">
                                     <i class="material-icons">timeline</i>
                                 </a>
                                 <a type="button" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
@@ -52,5 +51,6 @@
         </div>
     </div>
 </div>
+
 
 {% endblock content%}

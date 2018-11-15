@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views.generic.edit import UpdateView, CreateView, DeleteView
 from .models import *
 from GraficasApp import forms
-from django.urls import reverse_lazy 
+from django.urls import reverse_lazy
+from django.http import JsonResponse
+import json as simplejson
 
 # Create your views here.
 
@@ -12,7 +14,9 @@ def base(request):
     return render(request, 'baseAdmin.html')
 
 def graficas(request):
-    return render(request, 'graficas.html')
+    e = Estudiante.objects.all()
+    context = {'estudiantes_list': e}
+    return render(request, 'graficas.html', context)
 
 
 def estudiante_base(request):

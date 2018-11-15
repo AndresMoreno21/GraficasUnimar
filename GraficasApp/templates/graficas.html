@@ -3,16 +3,45 @@
 
 {% block content %}
 
-<div class="col-md-4">
-    <div class="card card-chart">
-        <div class="card-header" data-background-color="orange">
-            <div id="straightLinesChart" class="ct-chart"></div>
-        </div>
-        <div class="card-content">
-            <h4 class="card-title">Seguimiento de resultados del estudiante</h4>
-            <p class="category">En la grafica se visualizan las pruebas Saber 11 , Simulacros internos y Saber Pro</p>
+<table class="table" id="datos" style="display: none">
+    
+    {% for p in estudiantes_list.all %}
+    <tr>
+        
+        <td>{{p.identificacion}}</td>
+        <td id="ingles">{{p.ingles}}</td>
+        <td id="lecto">{{p.lecturacritica}}</td>
+        <td id="razo">{{p.razonamiento}}</td>
+        <td id="comp">{{p.competencias}}</td>
+        
+    </tr>
+    {% endfor%}
+    
+</table>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-icon" data-background-color="blue">
+                <i class="material-icons">timeline</i>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">Grafica del progreso del estudiante de <strong>SABER 11</strong> hasta <strong>SABER PRO</strong>
+                    <small> - Rounded</small>
+                </h4>
+            </div>
+            <div id="colouredBarsChart" class="ct-chart"></div>
+            
+            <div class="card-footer">
+                <h6>Pruebas que se visualizan en la grafica</h6>
+                <i class="fa fa-circle text-info"></i> Saber 11
+                <i class="fa fa-circle text-warning"></i> Tercer semestre
+                <i class="fa fa-circle text-danger"></i> Quinto semestre
+                <i class="fa fa-circle text-primary"></i> Saber Pro
+            </div>
         </div>
     </div>
 </div>
+
 
 {% endblock content%}

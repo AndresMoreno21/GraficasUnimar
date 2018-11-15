@@ -517,9 +517,9 @@ demo = {
         /*  **************** Straight Lines Chart - single line with points ******************** */
 
         dataStraightLinesChart = {
-          labels: ['\'11','\'S1','\'S2', '\'S3', '\'PRO'],
+          labels: ['\'Ingles','\'Lec.Critica','\'Razonamiento', '\'Comp.Ciudadanas', '\'C.Escrita'],
           series: [
-            [200, 100, 100, 100, 100]
+            [200, 180, 150, 120, 120]
           ]
         };
 
@@ -576,19 +576,24 @@ demo = {
 
         /*  **************** Coloured Rounded Line Chart - Line Chart ******************** */
 
-
+        var tabla = document.getElementById('datos');
+        var tr = tabla.getElementsByTagName('tr');
+        var td1 = tr[0].getElementsByTagName('td');
+        var ingles = td1[1].innerText
+        var lectura = td1[2].innerText
+        var razonamiento = td1[3].innerText
+        var competencias = td1[4].innerText
         dataColouredBarsChart = {
-          labels: ['\'06','\'07','\'08','\'09', '\'10', '\'11', '\'12', '\'13', '\'14','\'15'],
+          labels: ['\'Ingles','\'Lec.Critica','\'Razonamiento','\'Comp.Ciudadana'],
           series: [
-            [287, 385, 490, 554, 586, 698, 695, 752, 788, 846, 944],
-            [67, 152, 143,  287, 335, 435, 437, 539, 542, 544, 647],
-            [23, 113, 67, 190, 239, 307, 308, 439, 410, 410, 509]
+            [ingles, lectura, razonamiento, competencias],
+          
           ]
         };
 
         optionsColouredBarsChart = {
           lineSmooth: Chartist.Interpolation.cardinal({
-              tension: 10
+              tension: 100
           }),
           axisY: {
               showGrid: true,
@@ -597,8 +602,8 @@ demo = {
           axisX: {
               showGrid: false,
           },
-          low: 0,
-          high: 1000,
+          low: 100,
+          high: 300,
           showPoint: true,
           height: '300px'
         };
