@@ -578,15 +578,52 @@ demo = {
 
         var tabla = document.getElementById('datos');
         var tr = tabla.getElementsByTagName('tr');
+
         var td1 = tr[0].getElementsByTagName('td');
-        var ingles = td1[1].innerText
-        var lectura = td1[2].innerText
-        var razonamiento = td1[3].innerText
-        var competencias = td1[4].innerText
+        var tdt = tr[1].getElementsByTagName('td');
+        var tdq = tr[2].getElementsByTagName('td');
+        var tde = tr[3].getElementsByTagName('td');
+        var tdp = tr[4].getElementsByTagName('td');
+
+        var ingles = td1[0].innerText
+        var lectura = td1[1].innerText
+        var razonamiento = td1[2].innerText
+        var competencias = td1[3].innerText
+          
+        var inglest = tdt[0].innerText
+        var lecturat = tdt[1].innerText
+        var razonamientot = tdt[2].innerText
+        var competenciast = tdt[3].innerText
+        var escritot = tdt[4].innerText
+
+        var inglesq = tdq[0].innerText
+        var lecturaq = tdq[1].innerText
+        var razonamientoq = tdq[2].innerText
+        var competenciasq = tdq[3].innerText
+        var escritoq = tdq[4].innerText
+        
+        var inglese = tde[0].innerText
+        var lecturae= tde[1].innerText
+        var razonamientoe = tde[2].innerText
+        var competenciase = tde[3].innerText
+        var escritoe = tde[4].innerText
+        
+        var inglesp = tdp[0].innerText
+        var lecturap = tdp[1].innerText
+        var razonamientop = tdp[2].innerText
+        var competenciasp = tdp[3].innerText
+        var escritop = tdp[4].innerText
+          
+
         dataColouredBarsChart = {
-          labels: ['\'Ingles','\'Lec.Critica','\'Razonamiento','\'Comp.Ciudadana'],
+          labels: ['\'Ingles','\'Lec.Critica','\'Razonamiento','\'Comp.Ciudadana','\'Com.Escrita'],
+          
           series: [
             [ingles, lectura, razonamiento, competencias],
+            [inglest, lecturat, razonamientot, competenciast,escritot],
+            [inglesq, lecturaq, razonamientoq, competenciasq,escritoq],
+            [inglese, lecturae, razonamientoe, competenciase,escritoe],
+            [inglesp, lecturap, razonamientop, competenciasp,escritop],
           
           ]
         };

@@ -12,7 +12,7 @@ class EstudianteForm(forms.ModelForm):
             'lecturacritica': forms.TextInput(attrs={'class':'form-control'}),
             'razonamiento': forms.TextInput(attrs={'class':'form-control'}),
             'competencias': forms.TextInput(attrs={'class':'form-control'}),
-            'escrito': forms.TextInput(attrs={'class':'form-control'}),
+            
 
             
             'inglest': forms.TextInput(attrs={'class':'form-control'}),

@@ -9,7 +9,7 @@ class Estudiante(models.Model):
     lecturacritica = models.CharField(max_length=100)
     razonamiento  = models.CharField(max_length=100)
     competencias  = models.CharField(max_length=100)
-    escrito = models.CharField(max_length=100)
+    
 
     inglest = models.CharField(max_length=100, blank=True)
     lecturacriticat = models.CharField(max_length=100, blank=True)

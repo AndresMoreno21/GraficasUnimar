@@ -8,17 +8,58 @@
     {% for p in estudiantes_list.all %}
     <tr>
         
-        <td>{{p.identificacion}}</td>
+        
         <td id="ingles">{{p.ingles}}</td>
         <td id="lecto">{{p.lecturacritica}}</td>
         <td id="razo">{{p.razonamiento}}</td>
         <td id="comp">{{p.competencias}}</td>
         
     </tr>
+    <tr>
+        
+        
+        <td id="inglest">{{p.inglest}}</td>
+        <td id="lectot">{{p.lecturacriticat}}</td>
+        <td id="razot">{{p.razonamientot}}</td>
+        <td id="compt">{{p.competenciast}}</td>
+        <td id="escritot">{{p.escritot}}</td>
+        
+    </tr>
+    <tr>
+        
+        
+        <td id="inglesq">{{p.inglesq}}</td>
+        <td id="lectoq">{{p.lecturacriticaq}}</td>
+        <td id="razoq">{{p.razonamientoq}}</td>
+        <td id="compq">{{p.competenciasq}}</td>
+        <td id="escritoq">{{p.escritoq}}</td>
+        
+    </tr>
+    <tr>
+        
+        
+        <td id="inglese">{{p.inglese}}</td>
+        <td id="lectoe">{{p.lecturacriticae}}</td>
+        <td id="razoe">{{p.razonamientoe}}</td>
+        <td id="compe">{{p.competenciase}}</td>
+        <td id="escritoe">{{p.escritoe}}</td>
+        
+    </tr>
+    <tr>
+        
+        
+        <td id="inglesp">{{p.inglesp}}</td>
+        <td id="lectop">{{p.lecturacriticap}}</td>
+        <td id="razop">{{p.razonamientop}}</td>
+        <td id="compp">{{p.competenciasp}}</td>
+        <td id="escritop">{{p.escritop}}</td>
+        
+    </tr>
     {% endfor%}
     
 </table>
 
+{% for p in estudiantes_list.all %}
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -26,7 +67,7 @@
                 <i class="material-icons">timeline</i>
             </div>
             <div class="card-content">
-                <h4 class="card-title">Grafica del progreso del estudiante de <strong>SABER 11</strong> hasta <strong>SABER PRO</strong>
+                <h4 class="card-title">Grafica del progreso del estudiante {{p.identificacion}} de <strong>SABER 11</strong> hasta <strong>SABER PRO</strong>
                     <small> - Rounded</small>
                 </h4>
             </div>
@@ -43,5 +84,7 @@
     </div>
 </div>
 
+
+{% endfor%}
 
 {% endblock content%}

@@ -3,54 +3,321 @@
 
 {% block content %}
 
-<div class="col-md-12">
-    <div class="card">
-        <div class="card-header card-header-icon" data-background-color="rose">
-            <i class="material-icons">assignment</i>
+<div class="col-md-6">
+    <div class="card-header">
+        <h4 class="card-title">Menú de control</h4>
+    </div>
+    <div class="card-content">
+        <div class="btn-group">
+            <a   href="{% url 'graficas' %}" class="btn btn-info">Graficas Estudiantes</a>
+            <a  class="btn btn-primary">Graficas Programa</a>
         </div>
-        <h4 class="card-title">Lista de estudiantes</h4>
-        <div class="card-content">
-            <div class="table-responsive">
-                <table class="table" id="datos">
-                    <thead>
-                        <tr>
-                            <th class="text-center">#</th>
-                            <th>Identificacion</th>
-                            <th>Ingles</th>
-                            <th>Lectura Critica</th>
-                            <th>Razonamiento <br>Cuantitativo</th>
-                            <th>Competencias <br>Ciudadanas</th>
-                            <th>Comunicacion <br>Escrita</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for p in estudiantes_list.all %}
-                        <tr>
-                            <td class="text-center">{{p.pk}}</td>
-                            <td>{{p.identificacion}}</td>
-                            <td id="ingles">{{p.ingles}}</td>
-                            <td id="lecto">{{p.lecturacritica}}</td>
-                            <td id="razo">{{p.razonamiento}}</td>
-                            <td id="comp">{{p.competencias}}</td>
-                            <td class="td-actions text-right">
-                                <a type="button" rel="tooltip" class="btn btn-info" href="{% url 'graficas' %}">
-                                    <i class="material-icons">timeline</i>
+    </div>
+</div>
+
+{% for p in estudiantes_list.all %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">person</i>
+                    <div class="col-md-8 col-md-offset-2">
+                        <h5 class="card-title">ID:{{p.identificacion}}</h5>
+                        
+                        <br />
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="nav-center">
+                        <ul class="nav nav-pills nav-pills-info nav-pills-icons" role="tablist">
+                            
+                            <li class="active">
+                                <a href="#saber11{{p.identificacion}}" role="tab" data-toggle="tab">
+                                    <i class="material-icons">school</i> Saber 11
                                 </a>
-                                <a type="button" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                    <i class="material-icons">edit</i>
+                            </li>
+                            <li >
+                                <a href="#simulacro3{{p.identificacion}}" role="tab" data-toggle="tab">
+                                    <i class="material-icons">assignment</i> Simulacro 3°
                                 </a>
-                                <a type="button" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                    <i class="material-icons">close</i>
+                            </li>
+                            <li>
+                                <a href="#simulacro5{{p.identificacion}}" role="tab" data-toggle="tab">
+                                    <i class="material-icons">assignment</i> Simulacro 5°
                                 </a>
-                            </td>
-                        </tr>
-                        {% endfor%}
-                    </tbody>
-                </table>
+                            </li>
+                            <li>
+                                <a href="#simulacro7{{p.identificacion}}" role="tab" data-toggle="tab">
+                                    <i class="material-icons">assignment</i> Simulacro 7°
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#saberpro{{p.identificacion}}" role="tab" data-toggle="tab">
+                                    <i class="material-icons">business</i> Saber Pro
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="saber11{{p.identificacion}}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Saber 11</h4>
+                                    <p class="category">
+                                        Formulario de registro para la prueba saber °11
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="table-responsive">
+                                        <table class="table" id="datos">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    
+                                                    <th>Ingles</th>
+                                                    <th>Lectura Critica</th>
+                                                    <th>Razonamiento <br>Cuantitativo</th>
+                                                    <th>Competencias <br>Ciudadanas</th>
+                                                    
+                                                    <th>Gestion <br>Estudiante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    
+                                                    
+                                                    <td id="ingles">{{p.ingles}}</td>
+                                                    <td id="lecto">{{p.lecturacritica}}</td>
+                                                    <td id="razo">{{p.razonamiento}}</td>
+                                                    <td id="comp">{{p.competencias}}</td>
+                                                    <td class="td-actions text-right">
+                                                        
+                                                        <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                                            <i class="material-icons">edit</i>
+                                                        </a>
+                                                        <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                                            <i class="material-icons">close</i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="simulacro3{{p.identificacion}}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Simulacro 3°</h4>
+                                    <p class="category">
+                                        Formulario simulacro de tercer semestre
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                     <div class="table-responsive">
+                                        <table class="table" id="datos">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    
+                                                    <th>Ingles</th>
+                                                    <th>Lectura Critica</th>
+                                                    <th>Razonamiento <br>Cuantitativo</th>
+                                                    <th>Competencias <br>Ciudadanas</th>
+                                                    <th>Comunicacion <br>Escrita</th>
+                                                    <th>Gestion <br>Estudiante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    
+                                                   
+                                                    <td id="ingles">{{p.inglest}}</td>
+                                                    <td id="lecto">{{p.lecturacriticat}}</td>
+                                                    <td id="razo">{{p.razonamientot}}</td>
+                                                    <td id="comp">{{p.competenciast}}</td>
+                                                    <td id="comp">{{p.escritot}}</td>
+                                                    <td class="td-actions text-right">
+                                                        
+                                                        <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                                            <i class="material-icons">edit</i>
+                                                        </a>
+                                                        <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                                            <i class="material-icons">close</i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="simulacro5{{p.identificacion}}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Simulacro 5°</h4>
+                                    <p class="category">
+                                        Formulario para el simulacro de quinto semestre
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                                    <div class="table-responsive">
+                                        <table class="table" id="datos">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    
+                                                    <th>Ingles</th>
+                                                    <th>Lectura Critica</th>
+                                                    <th>Razonamiento <br>Cuantitativo</th>
+                                                    <th>Competencias <br>Ciudadanas</th>
+                                                    <th>Comunicacion <br>Escrita</th>
+                                                    <th>Gestion <br>Estudiante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    
+                                                    
+                                                    <td id="ingles">{{p.inglesq}}</td>
+                                                    <td id="lecto">{{p.lecturacriticaq}}</td>
+                                                    <td id="razo">{{p.razonamientoq}}</td>
+                                                    <td id="comp">{{p.competenciasq}}</td>
+                                                    <td id="comp">{{p.escritoq}}</td>
+                                                    <td class="td-actions text-right">
+                                                        
+                                                        <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                                            <i class="material-icons">edit</i>
+                                                        </a>
+                                                        <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                                            <i class="material-icons">close</i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="simulacro7{{p.identificacion}}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Simulacro 7°</h4>
+                                    <p class="category">
+                                        Formulario para el simulacro de septimo semestre
+                                    </p>
+                                </div>
+                                <div class="card-content">
+                               <div class="table-responsive">
+                                        <table class="table" id="datos">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    
+                                                    <th>Ingles</th>
+                                                    <th>Lectura Critica</th>
+                                                    <th>Razonamiento <br>Cuantitativo</th>
+                                                    <th>Competencias <br>Ciudadanas</th>
+                                                    <th>Comunicacion <br>Escrita</th>
+                                                    <th>Gestion <br>Estudiante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    
+                                                    
+                                                    <td id="ingles">{{p.inglese}}</td>
+                                                    <td id="lecto">{{p.lecturacriticae}}</td>
+                                                    <td id="razo">{{p.razonamientoe}}</td>
+                                                    <td id="comp">{{p.competenciase}}</td>
+                                                    <td id="comp">{{p.escritoe}}</td>
+                                                    <td class="td-actions text-right">
+                                                        
+                                                        <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                                            <i class="material-icons">edit</i>
+                                                        </a>
+                                                        <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                                            <i class="material-icons">close</i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="saberpro{{p.identificacion}}">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Saber Pro</h4>
+                                    <p class="category">
+                                        Formulario de registro para la prueba saber pro
+                                    </p>
+                                </div>
+                            <div class="table-responsive">
+                                        <table class="table" id="datos">
+                                            <thead>
+                                                <tr>
+                                                    
+                                                    
+                                                    <th>Ingles</th>
+                                                    <th>Lectura Critica</th>
+                                                    <th>Razonamiento <br>Cuantitativo</th>
+                                                    <th>Competencias <br>Ciudadanas</th>
+                                                    <th>Comunicacion <br>Escrita</th>
+                                                    <th>Gestion <br>Estudiante</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    
+                                                    <td id="ingles">{{p.inglesp}}</td>
+                                                    <td id="lecto">{{p.lecturacriticap}}</td>
+                                                    <td id="razo">{{p.razonamientop}}</td>
+                                                    <td id="comp">{{p.competenciasp}}</td>
+                                                    <td id="comp">{{p.escritop}}</td>
+                                                    <td class="td-actions text-right">
+                                                        
+                                                        <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                                                            <i class="material-icons">edit</i>
+                                                        </a>
+                                                        <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                                                            <i class="material-icons">close</i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+{% endfor%}
+
+
 
 
 {% endblock content%}
