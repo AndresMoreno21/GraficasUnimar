@@ -23,6 +23,9 @@
         <td id="razot">{{p.razonamientot}}</td>
         <td id="compt">{{p.competenciast}}</td>
         <td id="escritot">{{p.escritot}}</td>
+        <td id="form">{{p.formulaciont}}</td>
+        <td id="pen">{{p.cientificot}}</td>
+        <td id="dis">{{p.diseñot}}</td>
         
     </tr>
     <tr>
@@ -33,6 +36,9 @@
         <td id="razoq">{{p.razonamientoq}}</td>
         <td id="compq">{{p.competenciasq}}</td>
         <td id="escritoq">{{p.escritoq}}</td>
+        <td id="form">{{p.formulacionq}}</td>
+        <td id="pen">{{p.cientificoq}}</td>
+        <td id="dis">{{p.diseñoq}}</td>
         
     </tr>
     <tr>
@@ -43,6 +49,9 @@
         <td id="razoe">{{p.razonamientoe}}</td>
         <td id="compe">{{p.competenciase}}</td>
         <td id="escritoe">{{p.escritoe}}</td>
+        <td id="form">{{p.formulacione}}</td>
+        <td id="pen">{{p.cientificoe}}</td>
+        <td id="dis">{{p.diseñoe}}</td>
         
     </tr>
     <tr>
@@ -53,13 +62,16 @@
         <td id="razop">{{p.razonamientop}}</td>
         <td id="compp">{{p.competenciasp}}</td>
         <td id="escritop">{{p.escritop}}</td>
+        <td id="form">{{p.formulacionp}}</td>
+        <td id="pen">{{p.cientificop}}</td>
+        <td id="dis">{{p.diseñop}}</td>
         
     </tr>
     {% endfor%}
     
 </table>
 
-{% for p in estudiantes_list.all %}
+{% for p in estudiantes_list %}
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -74,11 +86,12 @@
             <div id="colouredBarsChart" class="ct-chart"></div>
             
             <div class="card-footer">
-                <h6>Pruebas que se visualizan en la grafica</h6>
+                <h6>Pruebas que se visualizan en la grafica:</h6>
                 <i class="fa fa-circle text-info"></i> Saber 11
-                <i class="fa fa-circle text-warning"></i> Tercer semestre
-                <i class="fa fa-circle text-danger"></i> Quinto semestre
-                <i class="fa fa-circle text-primary"></i> Saber Pro
+                <i class="fa fa-circle text-danger"></i> Tercer semestre
+                <i class="fa fa-circle text-warning"></i> Quinto semestre
+                <i class="fa fa-circle text-primary"></i> Septimo semestre
+                <i class="fa fa-circle text-success"></i> Saber Pro
             </div>
         </div>
     </div>
