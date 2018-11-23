@@ -32,7 +32,7 @@ class EstudianteCreate(CreateView):
 
 class EstudianteEditar(UpdateView):
     model = Estudiante
-    form_class = forms.EstudianteForm
+    form_class = forms.EstudianteEditarForm
     template_name = 'estudianteEditar.html'
     success_url = reverse_lazy('lista_estudiantes')
 

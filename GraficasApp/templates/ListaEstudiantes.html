@@ -10,7 +10,8 @@
     <div class="card-content">
         <div class="btn-group">
             <a   href="{% url 'graficas' %}" class="btn btn-info">Graficas Estudiantes</a>
-            <a  class="btn btn-primary">Graficas Programa</a>
+            
+            
         </div>
     </div>
 </div>
@@ -25,9 +26,16 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h5 class="card-title">ID:{{p.identificacion}}</h5>
                     
+                    
                     <br />
                 </div>
             </div>
+            <a type="ad" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
+                <i class="material-icons">edit</i>
+            </a>
+            <a type="ad" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
+                <i class="material-icons">close</i>
+            </a>
             <div class="card-content">
                 <div class="nav-center">
                     <ul class="nav nav-pills nav-pills-info nav-pills-icons" role="tablist">
@@ -81,7 +89,7 @@
                                                 <th>Competencias <br>Ciudadanas</th>
                                                 
                                                 
-                                                <th>Gestion <br>Estudiante</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -92,17 +100,7 @@
                                                 <td id="razo">{{p.razonamiento}}</td>
                                                 <td id="comp">{{p.competencias}}</td>
                                                 
-                                                <td class="td-actions text-right">
-                                                    <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'graficas'  %}">
-                                                        <i class="material-icons">timeline</i>
-                                                    </a>
-                                                    <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                                        <i class="material-icons">edit</i>
-                                                    </a>
-                                                    <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                                        <i class="material-icons">close</i>
-                                                    </a>
-                                                </td>
+                                               
                                             </tr>
                                             
                                         </tbody>
@@ -135,7 +133,7 @@
                                                 <th>Formulacion de<br>Proyectos</th>
                                                 <th>Pensamiento <br> Cientifico</th>
                                                 <th>Diseño de <br> Software</th>
-                                                <th>Gestion <br>Estudiante</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -153,12 +151,7 @@
                                                 <td id="dis">{{p.diseñot}}</td>
                                                 <td class="td-actions text-right">
                                                     
-                                                    <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                                        <i class="material-icons">edit</i>
-                                                    </a>
-                                                    <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                                        <i class="material-icons">close</i>
-                                                    </a>
+                                              
                                                 </td>
                                             </tr>
                                             
@@ -193,7 +186,7 @@
                                                 <th>Formulacion de<br>Proyectos</th>
                                                 <th>Pensamiento <br> Cientifico</th>
                                                 <th>Diseño de <br> Software</th>
-                                                <th>Gestion <br>Estudiante</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -211,12 +204,7 @@
                                                 <td id="dis">{{p.diseñoq}}</td>
                                                 <td class="td-actions text-right">
                                                     
-                                                    <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                                        <i class="material-icons">edit</i>
-                                                    </a>
-                                                    <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                                        <i class="material-icons">close</i>
-                                                    </a>
+                                              
                                                 </td>
                                             </tr>
                                             
@@ -251,7 +239,7 @@
                                                 <th>Formulacion de<br>Proyectos</th>
                                                 <th>Pensamiento <br> Cientifico</th>
                                                 <th>Diseño de <br> Software</th>
-                                                <th>Gestion <br>Estudiante</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -269,12 +257,7 @@
                                                 <td id="dis">{{p.diseñoe}}</td>
                                                 <td class="td-actions text-right">
                                                     
-                                                    <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                                        <i class="material-icons">edit</i>
-                                                    </a>
-                                                    <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                                        <i class="material-icons">close</i>
-                                                    </a>
+                                              
                                                 </td>
                                             </tr>
                                             
@@ -307,7 +290,7 @@
                                             <th>Formulacion de<br>Proyectos</th>
                                             <th>Pensamiento <br> Cientifico</th>
                                             <th>Diseño de <br> Software</th>
-                                            <th>Gestion <br>Estudiante</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -324,12 +307,7 @@
                                             <td id="dis">{{p.diseñop}}</td>
                                             <td class="td-actions text-right">
                                                 
-                                                <a type="a" rel="tooltip" class="btn btn-success" href="{% url 'estudiante_editar' p.pk %}">
-                                                    <i class="material-icons">edit</i>
-                                                </a>
-                                                <a type="a" rel="tooltip" class="btn btn-danger" href="{% url 'estudiante_borrar' p.pk %}" >
-                                                    <i class="material-icons">close</i>
-                                                </a>
+                                               
                                             </td>
                                         </tr>
                                         

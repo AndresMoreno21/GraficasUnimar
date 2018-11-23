@@ -1211,7 +1211,7 @@ showNotification: function(from, align){
     
     $.notify({
         icon: "notifications",
-        message: "Welcome to <b>Material Dashboard</b> - a beautiful freebie for every web developer."
+        message: "La identificacion del estudiante ingresada ya se encuentra registrada."
         
     },{
         type: type[color],
