@@ -222,7 +222,7 @@ demo = {
         image_src = $page.data('image');
         
         if(image_src !== undefined){
-            image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
+            image_container = '<div class="full-page-background" style="background-image: url('+ image_src + ') "/>'
             $page.append(image_container);
         }
     },
@@ -476,7 +476,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // creative tim: we recommend you to set the high sa the biggest value )+ something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
         }
         
@@ -504,7 +504,7 @@ demo = {
                 showGrid: false,
             },
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // creative tim: we recommend you to set the high sa the biggest value )+ something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
             showPoint: false
         }
@@ -528,7 +528,7 @@ demo = {
                 tension: 0
             }),
             low: 100,
-            high: 350, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 350, // creative tim: we recommend you to set the high sa the biggest value )+ something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
             classNames: {
                 point: 'ct-point ct-white',
@@ -542,6 +542,7 @@ demo = {
         
         
         /*  **************** Coloured Rounded Line Chart - Line Chart ******************** */
+        
         
         
         dataColouredRoundedLineChart = {
@@ -584,7 +585,7 @@ demo = {
         var tdq = tr[2].getElementsByTagName('td');
         var tde = tr[3].getElementsByTagName('td');
         var tdp = tr[4].getElementsByTagName('td');
-     
+        
         
         var ingles = td1[0].innerText
         var lectura = td1[1].innerText
@@ -600,6 +601,39 @@ demo = {
         var tdct = tdt[6].innerText
         var tddt = tdt[7].innerText
         
+        if( inglest == "None")
+        {
+            inglest = 0
+        }
+        if (lecturat == "None")
+        {
+            lecturat = 0
+        }
+        if(razonamientot == "None")
+        {
+            razonamientot = 0
+        }
+        if(competenciast == "None")
+        {
+            competenciast=0
+        }
+        if(escritot== "None")
+        {
+            escritot=0
+        }
+        if (tdft== "None")
+        {
+            tdft=0
+        }
+        if(tdct == "None" )
+        {
+            tdct=0
+        }
+        if(tddt=="None")
+        {
+            tddt=0
+        }
+        
         var inglesq = tdq[0].innerText
         var lecturaq = tdq[1].innerText
         var razonamientoq = tdq[2].innerText
@@ -608,6 +642,39 @@ demo = {
         var tdfq = tdq[5].innerText
         var tdcq = tdq[6].innerText
         var tddq = tdq[7].innerText
+        
+        if( inglesq == "None")
+        {
+            inglesq = 0
+        }
+        if (lecturaq == "None")
+        {
+            lecturaq = 0
+        }
+        if(razonamientoq == "None")
+        {
+            razonamientoq = 0
+        }
+        if(competenciasq == "None")
+        {
+            competenciasq=0
+        }
+        if(escritoq== "None")
+        {
+            escritoq=0
+        }
+        if (tdfq== "None")
+        {
+            tdfq=0
+        }
+        if(tdcq == "None" )
+        {
+            tdcq=0
+        }
+        if(tddq=="None")
+        {
+            tddq=0
+        }
         
         var inglese = tde[0].innerText
         var lecturae= tde[1].innerText
@@ -618,6 +685,40 @@ demo = {
         var tdce = tde[6].innerText
         var tdde = tde[7].innerText
         
+        if( inglese == "None")
+        {
+            inglese = 0
+        }
+        if (lecturae == "None")
+        {
+            lecturae = 0
+        }
+        if(razonamientoe == "None")
+        {
+            razonamientoe = 0
+        }
+        if(competenciase == "None")
+        {
+            competenciase=0
+        }
+        if(escritoe== "None")
+        {
+            escritoe=0
+        }
+        if (tdfe== "None")
+        {
+            tdfe=0
+        }
+        if(tdce == "None" )
+        {
+            tdce=0
+        }
+        
+        if(tdde=="None")
+        {
+            tdde=0
+        }
+        
         var inglesp = tdp[0].innerText
         var lecturap = tdp[1].innerText
         var razonamientop = tdp[2].innerText
@@ -626,6 +727,39 @@ demo = {
         var tdfp = tdp[5].innerText
         var tdcp = tdp[6].innerText
         var tddp = tdp[7].innerText
+        
+        if( inglesp == "None")
+        {
+            inglesp = 0
+        }
+        if (lecturap == "None")
+        {
+            lecturap = 0
+        }
+        if(razonamientop == "None")
+        {
+            razonamientop = 0
+        }
+        if(competenciasp == "None")
+        {
+            competenciasp=0
+        }
+        if(escritop== "None")
+        {
+            escritop=0
+        }
+        if (tdfp== "None")
+        {
+            tdfp=0
+        }
+        if(tdcp == "None" )
+        {
+            tdcp=0
+        }
+        if(tddp=="None")
+        {
+            tddp=0
+        }
         
         
         dataColouredBarsChart = {
@@ -652,7 +786,7 @@ demo = {
             axisX: {
                 showGrid: false,
             },
-            low: 100,
+            low: 0,
             high: 300,
             showPoint: true,
             height: '300px'
@@ -667,16 +801,40 @@ demo = {
         
         /*  **************** Public Preferences - Pie Chart ******************** */
         
+        
+        
+        var inglesProm = parseInt(ingles )+ parseInt(inglese )+ parseInt(inglesp )+ parseInt(inglesq )+ parseInt(inglest)/5
+        var lecturaProm = parseInt(lectura)+parseInt(lecturae)+parseInt(lecturap)+parseInt(lecturaq)/5
+        var razonamientoProm = parseInt(razonamiento)+parseInt(razonamientoe)+parseInt(razonamientop)+parseInt(razonamientoq)+parseInt(razonamientot)/5
+        var competenciasProm = parseInt(competencias)+parseInt(competenciase)+parseInt(competenciasp)+parseInt(competenciasq)+ parseInt(competenciast)/5
+        var escritoProm = parseInt(escritoe) +parseInt(escritop) +parseInt(escritoq) + parseInt(escritot)/4
+        var formulacionProm = parseInt(tdfe)+parseInt(tdfp)+parseInt(tdfq)+parseInt(tdft)/4
+        var pensamientoProm = parseInt(tdce)+parseInt(tdcp)+parseInt(tdcq)+parseInt(tdct/4)
+        var diseñoProm = parseInt(tdde) +parseInt(tddp)+ parseInt(tddq)+ parseInt(tddt)/4
+        
+        
+        
         var dataPreferences = {
-            labels: ['62%','32%','6%'],
-            series: [62, 32, 6]
+            labels: ['Ingles','Lectura','Razonamiento','Competencias Ciudadanas'],
+            series: [inglesProm,lecturaProm,razonamientoProm,competenciasProm]
         };
         
         var optionsPreferences = {
-            height: '230px'
+            height: '450px'
         };
         
         Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
+        
+        var dataPreferences2 = {
+            labels: ['Escrito','Formulacion','Pensamiento','Diseño'],
+            series: [escritoProm,formulacionProm,pensamientoProm,diseñoProm]
+        };
+        
+        var optionsPreferences2 = {
+            height: '450px'
+        };
+        
+        Chartist.Pie('#chartPreferences2', dataPreferences2, optionsPreferences2);
         
         /*  **************** Simple Bar Chart - barchart ******************** */
         
@@ -760,7 +918,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 50, // creative tim: we recommend you to set the high sa the biggest value )+ something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0},
         }
         
@@ -784,7 +942,7 @@ demo = {
                 tension: 0
             }),
             low: 0,
-            high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+            high: 1000, // creative tim: we recommend you to set the high sa the biggest value )+ something for a better look
             chartPadding: { top: 0, right: 0, bottom: 0, left: 0}
         }
         
@@ -1168,7 +1326,7 @@ initFullCalendar: function(){
             },
             {
                 title: 'Lunch',
-                start: new Date(y, m, d+7, 12, 0),
+                start: new Date(y, m, d + 7, 12, 0),
                 end: new Date(y, m, d+7, 14, 0),
                 allDay: false,
                 className: 'event-red'
